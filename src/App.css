@@ -1,38 +1,310 @@
-.App {
-  text-align: center;
+body {
+  font-family: Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav {
+  background: #333;
+  color: white;
+  padding: 1em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav ul {
+  list-style: none;
+  padding: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav ul li {
+  display: inline;
+  margin-right: 1em;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+#app {
+  padding: 1em;
+}
+
+
+#leads {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+form {
+  display: grid;
+  gap: 1em;
+}
+
+form div {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+form label {
+  margin-bottom: 0.5em;
+}
+
+form input {
+  padding: 0.5em;
+  font-size: 1em;
+}
+
+button {
+  padding: 0.5em;
+  font-size: 1em;
+  background-color: #333;
   color: white;
+  border: none;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #555;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#leads-list {
+  list-style-type: none;
+  padding: 0;
 }
+
+#leads-list li {
+  padding: 0.5em;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+}
+
+#leads-list button {
+  margin-left: 0.5em;
+  padding: 0.3em;
+  font-size: 0.9em;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 2em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal form div {
+  margin-bottom: 1em;
+}
+
+.modal form button {
+  margin-top: 1em;
+  padding: 0.5em;
+  font-size: 1em;
+}
+
+#tasks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.task-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid #007bff; /* Add border color */
+}
+
+.task-card h3 {
+  margin-top: 0;
+}
+
+.task-card p {
+  margin: 0.5em 0;
+}
+
+
+
+#lead-details p {
+  margin: 0.5em 0;
+}
+
+#lead-details ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#lead-details ul li {
+  padding: 0.5em;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+}
+
+#lead-details ul li input[type="checkbox"] {
+  margin-right: 0.5em;
+}
+
+#lead-details button {
+  padding: 0.5em;
+  font-size: 1em;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 1em;
+  margin-right: 0.5em; /* Add margin to separate buttons */
+}
+
+#lead-details button:hover {
+  background-color: #555;
+}
+
+
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 2em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal form div {
+  margin-bottom: 1em;
+}
+
+.modal form button {
+  margin-top: 1em;
+  padding: 0.5em;
+  font-size: 1em;
+}
+
+#conferences {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+#conferences form {
+  display: grid;
+  gap: 1em;
+}
+
+#conferences form div {
+  display: flex;
+  flex-direction: column;
+}
+
+#conferences form label {
+  margin-bottom: 0.5em;
+}
+
+#conferences form input,
+#conferences form textarea {
+  padding: 0.5em;
+  font-size: 1em;
+}
+
+#conferences form button {
+  padding: 0.5em;
+  font-size: 1em;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#conferences form button:hover {
+  background-color: #555;
+}
+
+#conferences ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#conferences ul li {
+  padding: 0.5em;
+  border-bottom: 1px solid #ddd;
+  margin-top: 1em;
+}
+
+#conferences ul li strong {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+#conferences ul li button {
+  margin-right: 0.5em;
+  padding: 0.3em 0.7em;
+  font-size: 0.9em;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#conferences ul li button:hover {
+  background-color: #0056b3;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 2em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal form div {
+  margin-bottom: 1em;
+}
+
+.modal form button {
+  margin-top: 1em;
+  padding: 0.5em;
+  font-size: 1em;
+}
+
+/* New styles to add margin between buttons */
+.modal button {
+  margin-right: 0.5em;
+  margin-bottom: 0.5em; /* Add some space below the buttons as well */
+}
+
+.modal button:last-child {
+  margin-right: 0; /* Remove right margin for the last button */
+}
+
